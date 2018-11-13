@@ -32,8 +32,12 @@
             if (keyboardHeight > 0)
             {
                 self.heightConstraint.constant = keyboardHeight;
-                [self setAllowsSelfSizing:YES];
+
+            } else {
+                // the default keyboard height in english input mode
+                self.heightConstraint.constant = 335;
             }
+            [self setAllowsSelfSizing:YES];
         }
 #endif
 		//!!!
