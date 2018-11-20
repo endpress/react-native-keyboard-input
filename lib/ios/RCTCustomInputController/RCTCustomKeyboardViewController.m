@@ -10,7 +10,11 @@
 #if __has_include(<KeyboardTrackingView/ObservingInputAccessoryView.h>)
     #import <KeyboardTrackingView/ObservingInputAccessoryView.h>
     #define ObservingInputAccessoryView_IsAvailable true
+#elif __has_include("ObservingInputAccessoryView.h")
+    #import "ObservingInputAccessoryView.h"
+    #define ObservingInputAccessoryView_IsAvailable true
 #endif
+
 
 @implementation RCTCustomKeyboardViewController
 
