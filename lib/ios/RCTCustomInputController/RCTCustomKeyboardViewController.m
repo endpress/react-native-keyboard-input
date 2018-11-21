@@ -26,7 +26,7 @@
 	{
 		self.inputView = [[UIInputView alloc] initWithFrame:CGRectZero inputViewStyle:UIInputViewStyleKeyboard];
 
-        self.heightConstraint = [self.inputView.heightAnchor constraintEqualToConstant:0];
+        self.heightConstraint = [self.inputView.heightAnchor constraintEqualToConstant:335];
         
 #ifdef ObservingInputAccessoryView_IsAvailable
         ObservingInputAccessoryView *activeObservingInputAccessoryView = [ObservingInputAccessoryViewManager sharedInstance].activeObservingInputAccessoryView;
@@ -37,13 +37,10 @@
             {
                 self.heightConstraint.constant = keyboardHeight;
 
-            } else {
-                // the default keyboard height in english input mode
-                self.heightConstraint.constant = 335;
             }
-            [self setAllowsSelfSizing:YES];
         }
 #endif
+        [self setAllowsSelfSizing:YES];
 		//!!!
 		self.view.translatesAutoresizingMaskIntoConstraints = NO;
 	}
